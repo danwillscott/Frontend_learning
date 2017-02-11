@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type="text/javascript">				/*jQuery*/
+			$(document).ready(function(){
+			$( "img" ).hover(function(){
+			    $(this).attr("src", $(this).attr("alt-src")); 	/*Apply second src to picture when roll over*/
+			  }, function() {
+			    $(this).attr("src", $(this).attr("org-src"));	/*Reapply original when roll off*/
+			  }
+			);
+		  })
+		</script>
+		<style type="text/css">
+			#main-content{					/*just some basic CSS styling to make it look nicer*/
+				background-color: black;
+				margin: 20px;
+				padding: 20px;
+			}
+			#main-content, img{
+				display: inline-block;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main-content">
+			<img src="chellocat.jpg" 	alt-src="kantana.jpg" 		 org-src="chellocat.jpg"height="100" width="100"> 	<!-- 1 -->
+			<img src="cherry.jpg" 		alt-src="jean-luc-picat.jpg" org-src="cherry.jpg"height="100" width="100">		<!-- 2 -->
+			<img src="coder2.jpg" 		alt-src="github.jpg" 		 org-src="coder2.jpg"height="100" width="100">		<!-- 3 -->
+			<img src="codercat.jpg" 	alt-src="dojocat.jpg" 		 org-src="codercat.jpg"height="100" width="100">	<!-- 4 -->
+		</div>
+	</body>
+</html>

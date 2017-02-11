@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">				/*jQuery*/
+	var user_input;
+		$(document).ready(function(){
+			
+			$("#formVal").submit(function(){			/*This is the function that is called when you press submit*/
+				
+				user_input = $(this).serializeArray() 	/*saves the current values from the forms in an array*/
+				var tr = "<tr></tr>"
+				for(var i = 0; i < user_input.length; i+=1){
+					if(i===0){							/*This checks to see if first time through and adds the TR elements*/
+						$(tr).appendTo("tbody");
+				}
+					$("<td>"+user_input[i].value+"</td>").appendTo("tbody tr:last"); /*now we append the LAST tr in tbody with user info*/
+						
+					}
+				return false; /*This is to ensure you don't move to a new page when you press the sub button*/
+			});
+
+	})
+	</script>
+
+
+
+
+
+	<style type="text/css">
+		form{
+			margin: 40px;
+			padding: 40px;
+			width: 235px;
+			background-color: black;
+			color: white;
+		}
+		#dynamiclist{
+			background-color: gray;
+			color: tan;
+		}
+		th{
+			padding-right: 25px;
+			margin-left: -4px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="dynamiclist">
+		<table>
+			<thead>
+				<tr>
+					<th>Last Name</th>
+					<th>First Name</th>
+					<th>Email Address</th>
+					<th>Phone Number</th>
+				</tr>
+			</thead>
+			<tbody> 
+											<!-- all dynamicly gen table content will go here -->
+			</tbody>  
+		</table>
+	</div>
+	<form id="formVal" action="gohere.php" method="post">
+		Last Name <input type="text" name="last_name">
+		First Name <input type="text" name="first_name">
+		Email Address <input type="text" name="email">
+		Phone Number <input type="text" name="phone">
+		<input id="addUser" type="submit" value="Add User">
+	</form>
+</body>
+</html>

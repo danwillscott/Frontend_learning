@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">				/*jQuery*/
+		$(document).ready(function(){
+			$("img").click(function(){
+					if($(this).attr("src")===$(this).attr("alt-cat")){
+						var src = $(this).attr("alt-nin");
+						$(this).attr("src", src);
+					} else {
+						var src = $(this).attr("alt-cat");
+						$(this).attr("src", src);
+					}
+			});
+		})
+		</script>
+		<style type="text/css">
+		body{
+			position: relative; /* or absolute */
+  			left: 40%;
+			background-color: #272822;
+			/*padding: 100px;*/
+			width: 200px;
+		}
+		img{
+			position: center;
+		}
+		</style>
+</head>
+<body>
+	<img src="cat0.png" alt-nin="ninja0.png" alt-cat="cat0.png">
+	<img src="cat1.png" alt-nin="ninja1.png" alt-cat="cat1.png">
+	<img src="cat2.png" alt-nin="ninja2.png" alt-cat="cat2.png">
+	<img src="cat3.png" alt-nin="ninja3.png" alt-cat="cat3.png">
+	<img src="cat4.png" alt-nin="ninja4.png" alt-cat="cat4.png">
+</body>
+</html>

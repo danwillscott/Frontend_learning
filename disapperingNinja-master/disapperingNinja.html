@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type="text/javascript">				/*jQuery*/
+			$(document).ready(function(){
+			$("#start").click(function(){
+				$("img").show();
+				$("#restore").show();
+				$(this).hide();
+			});
+		    $("#restore").click(function(){
+		    	$("img").show();
+		    	
+
+
+		    });
+		    $("img").click(function(){
+		    	$(this).hide();
+		    });
+		  })
+		</script>
+		<style type="text/css">
+			#main-content{
+				background-color: black;
+				/*width: 450px;*/
+				margin: 20px;
+				padding: 20px;
+			}
+			#main-content, img{
+				display: inline-block;
+				margin: 20px;
+			}
+			img{
+				display: none;
+			}
+			#restore{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main-content">
+			<button id="start">Ready to start this awesomeness?</button>
+			<img src="chellocat.jpg" alt="number 1" height="100" width="100">
+			<img src="cherry.jpg" height="100" width="100">
+			<img src="coder2.jpg" height="100" width="100">
+			<img src="codercat.jpg" height="100" width="100">
+			<img src="dojocat.jpg" height="100" width="100">
+			<img src="github.jpg" height="100" width="100">
+			<img src="jean-luc-picat.jpg" height="100" width="100">
+			<img src="kantana.jpg" height="100" width="100">
+			<br>
+			<button id="restore">Restore</button>
+		</div>
+	</body>
+</html>

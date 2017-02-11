@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <script type="text/javascript" src="scripts.js"/></script> -->
+		<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type="text/javascript">	
+							/*jQuery*/
+
+		  $(document).ready(function(){
+
+		  	$(document).on("click", "img" ,function(){
+		  		$("#pokemon-info").show();
+		  		var id = $(this).attr('id');
+
+		  	$.get("http://pokeapi.co/api/v1/pokemon/"+id+"/", function(res){
+		  		// console.log(res);
+		  		$( document ).ajaxComplete(function( event,request, settings ) {
+					if(res===undefined){
+						alert("page failed to load!")
+						return;
+					} else {
+						$("li").remove();
+			  		for(var i = 0; i < res.types.length; i += 1){
+			  			$("ul").append("<li>"+res.types[i].name+"</li>");
+			  		}
+			  		$("h1").text(res.name);
+			  		$("#height").text(res.height);
+			  		$("#weight").text(res.weight);
+			  		$("#api-img").attr('src', "http://pokeapi.co/media/img/"+id+".png")
+			  		}
+		  		});
+		  	}, 'json' )
+		  	});
+
+
+		  	$('button').click(function(){
+		  		var poke_link = []
+		  		$('button').hide();
+			  	for(var i = 1; i <= 151; i += 1){     /*FIX TO 151 BEFORE PUSH*/
+			  		$("#img-holder").append("<img id="+ i +" src=http://pokeapi.co/media/img/"+[i]+".png>");
+			  	}
+			  	
+			  	
+		  	});
+
+		  })
+		</script>
+		<style type="text/css">
+			body{
+				background: #171814;
+				color: white;
+				width: 100%;
+				height: 100%;
+			}
+			img{
+				width: 100px;
+				height: 100px;
+				padding: 10px;
+				border:4px solid #E6E6E6;
+			}
+			button{
+				background: #272822;
+				color: #E6E6E6;
+			}
+			#img-holder{
+				width: 79%;
+				display: inline-block;
+				vertical-align: top;
+
+			}
+			#pokemon-info{
+				width: 19%;
+				height: 100%;
+				border: 1px solid white;
+				display: inline-block;
+				vertical-align: top;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="img-holder">
+			<button>Ready for some Pokemon?</button>
+		</div>
+    	<div id="pokemon-info">
+    		<h1></h1>
+    		<img id="api-img" src="">
+    		<h3>Types</h3>
+    		<ul>
+
+    		</ul>
+    		<h3>Height</h3>
+    		<p id="height"></p>
+    		<h3>Weight</h3>
+    		<p id="weight"></p>
+    	</div>
+
+	</body>
+</html>

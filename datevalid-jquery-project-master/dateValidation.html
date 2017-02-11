@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-darkness/jquery-ui.css">
+	<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript">	
+	var user_input;
+	var date1;
+	var date2;
+	var clicker = true;
+	var stopProp = function(name){
+		$(name).click(function(event){
+		event.stopPropagation();
+	})}
+		$( function() {
+				$( ".datepicker1" ).datepicker();
+				$( ".datepicker2" ).datepicker();
+			});
+		$(document).ready(function(){
+
+			// var user_description
+			$("#formVal").submit(function(){			/*This is the function that is called when you press submit*/
+				date1 = $( ".datepicker1" ).datepicker( "getDate" );
+				date2 = $( ".datepicker2" ).datepicker( "getDate" );
+				user_input = $(this).serializeArray(); 	/*saves the current values from the forms in an array*/
+				var userName = user_input[0].value;
+
+				if (userName <= ""){
+					$("#user-name").show();
+					$("#user-name").fadeOut(5000)
+				} 
+				if (date2 === undefined || date2 === null){
+					$("#date2").show();
+					$("#date2").fadeOut(5000);
+				} 
+				if (date1 === undefined || date1 === null){
+					$("#date1").show();
+					$("#date1").fadeOut(5000);
+				}
+				// if (userName > ""){
+				// 	$("#user-name").hide();
+				// } 
+				// if (date2 !== undefined && date2 !== null){
+				// 	$("#date2").hide();
+				// } 
+				// if (date1 !== undefined && date1 !== null){
+				// 	$("#date1").hide();
+				// }
+				if(userName > "" && date1 !== undefined && date1 !== null && date2 !== undefined && date2 !== null){
+					console.log(userName)
+					// alert("Hi "+userName+ " your travel dates are "+date1+" to "+date2)
+				} 
+				return false; 							/*Returning false stops redirect*/
+			});
+	})
+	</script>
+
+
+	<style type="text/css">
+	body{
+		background-color: #272822;
+		color: #8F908A;
+	}
+	#date1{
+		padding: 7px;
+		background-color: red;
+		display: none;
+		border-radius: 10px;
+		color: black;
+
+	}
+	#date2{
+		padding: 7px;
+		background-color: red;
+		display: none;
+		border-radius: 10px;
+		color: black;
+	}
+	#user-name{
+		padding: 7px;
+		background-color: red;
+		display: none;
+		border-radius: 10px;
+		color: black;
+	}
+	input[type="text"]{
+		background-color: #E6E6E6;
+
+	}
+	#addUser{
+		background-color: #8B8B8B;
+		padding: 5px;
+		margin-top: 5px;
+		border-radius: 10px;
+		-webkit-box-shadow: 10px 10px 20px -1px rgba(0,0,0,0.75);
+		-moz-box-shadow: 10px 10px 20px -1px rgba(0,0,0,0.75);
+		box-shadow: 10px 10px 20px -1px rgba(0,0,0,0.75);
+	}
+	h1{
+		text-shadow: 4px 4px 10px rgba(150, 150, 150, 1);
+	}
+	p, h3{
+		text-shadow: 4px 4px 10px rgba(150, 150, 150, 1);
+	}
+	</style>
+</head>
+<body>
+	<div id="head">
+		<h1>Welcome to the Codingdojo plan-a-Cruise!</h1>
+	</div>
+	<div class='left-side'>
+		<form id="formVal" action="gohere.php" method="post">
+			<p>Start Date: <br><input type="text" class="datepicker1"><span id="date1">YOU MUST ENTER A DATE!</span></p>
+			<p>End Date: <br><input type="text" class="datepicker2"><span id="date2">YOU MUST ENTER A DATE!</span></p>
+			<h3>Name</h3><input type="text" name="full_name" placeholder="Name"><span id="user-name">YOU MUST ENTER A YOUR NAME!</span><br>
+			<input id="addUser" type="submit" value="Add User">
+		</form>
+	</div>
+	<div class="right-side">
+			
+	</div>
+</body>
+</html>

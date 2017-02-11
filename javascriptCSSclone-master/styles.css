@@ -1,0 +1,68 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+ width: 950px;
+ background-color: 	#483D8B;
+ padding: 5px;
+}
+#header{
+ height: 60px;
+ background-color: #B22222;
+ margin: 5px;
+ border-radius: 15px;
+}
+#navigation{
+ height: 300px;
+ width: 200px;
+ background-color: #008B8B;
+ margin: 5px;
+ padding: 5px;
+ float: left;
+ border-radius: 15px;
+}
+#main_content{
+ height: 400px;
+ width: 700px;
+ background-color: #00008B;
+ margin: 5px;
+ padding: 5px;
+ display: inline-block;
+ border-radius: 15px;
+ color: silver;
+
+}
+#footer{
+ height: 30px;
+ width: auto;
+ background-color: gray;
+ padding: 5px;
+ margin: 7px;
+ border-radius: 15px;
+}
+#headerFont{
+	padding: 10px;
+}
+#main-list{
+	padding: 10px;
+	margin:10px;
+}
+p{
+	padding: 10px;
+}
+#nav-list{
+	list-style-position: inside
+	 /*padding-left: 40px;*/
+}
+#nav-in-list{
+	 padding-left: 20px;
+
+}
+#main-header{
+	text-indent: 10px;
+}
+a{
+	text-decoration:none;
+}

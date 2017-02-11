@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">						/*jQuery*/
+	var user_input;
+	var nowThis;
+	var clicker = true;
+	var stopProp = function(name){
+		$(name).click(function(event){
+		event.stopPropagation();
+	})}
+		$(document).ready(function(){
+			var user_description
+
+			$("#formVal").submit(function(){			/*This is the function that is called when you press submit*/
+				user_input = $(this).serializeArray() 	/*saves the current values from the forms in an array*/
+				var nameOrdered = "" + user_input[1].value + " " + user_input[0].value + ""
+				var idMaker = user_input[1].value+user_input[0].value
+				var divMaker = "<div class=contactCard></div>";
+				var user_description = ($("#desc_field").val());
+				var cssArray = ["border", "1px solid white","height", "250px","text-align", "center","margin-top", "5px"]
+				if(idMaker > ""){
+					$(divMaker).first().appendTo(".right-side");
+					$("<h1>" + nameOrdered + "</h1><p>" + user_description + "</p> ").appendTo(".right-side :last"); /*Inserting contact card*/
+					$()
+				} else {
+					alert("You must enter at least first or last name");
+				}
+														
+				return false; 							/*Returning false stops redirect*/
+			});
+			$(document).on("click", ".contactCard", function(){
+				// console.log($(".contactCard p").css("display"));
+				if(clicker){
+					$("p", this).show();
+					$("h1", this).css("display", "none");
+					clicker = !clicker
+
+				} else {
+					$("p", this).hide();
+					$("h1", this).show()
+					clicker = !clicker
+				}
+			})
+			$(".contactCard h1").click(function() {
+
+    			$(this).hide();
+    		});
+
+			stopProp('left-side');
+			stopProp('right-side');
+
+	})
+	</script>
+
+
+	<style type="text/css">
+		.contactCard{
+			border: 5px solid white;
+			height: 250px;
+			margin-top: 5px;
+			color: white;
+			border-radius: 15px;
+		}
+		.contactCard, p h1{
+			text-align: center;
+		}
+		.contactCard p {
+			display: none;
+		}
+
+
+		#head{
+			width: 99%;
+			height:3%;
+			background-color: #393937;
+			text-align: center;
+			border: 1px solid black;
+		}
+		#head h1{
+			margin: 0px;
+			padding-top: .5%;
+			display: inline-block;
+		}
+		#formVal{
+			margin: 1%;
+			padding: 1%;
+			width: 95.7%;
+			background-color: black;
+			color: white;
+			vertical-align: top;
+			border-radius: 10px;
+		}
+		.right-side{
+			display: inline-block;
+			/*background-color: red;*/
+			/*color: tan;*/
+			height:100%;
+			width: 50%;
+			vertical-align: top;
+			margin-left: 2%;
+		}
+		.left-side{
+			display: inline-block;
+			background-color: #E6E6E6;
+			height: 100%;
+			width: 45%;
+			text-align: left;
+			vertical-align: top;
+			border: 1px solid gray;
+			border-radius: 10px;
+		}
+		body{
+			background-color: #272822;
+			height: 95%;
+			width: 99%;
+			padding:.2%;
+		}
+		textarea{
+			width: 50%;
+			display: inline-block;
+		}
+		#formVal h3{
+			margin: 1% 0% 1% 0%;
+			/*border-radius: 10px;*/
+		}
+		#addUser{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="head">
+		<h1>Welcome to the contact card page</h1>
+	</div>
+	<div class='left-side'>
+		<form id="formVal" action="gohere.php" method="post">
+			<h3>Last Name</h3><input type="text" name="last_name" placeholder="First Name">
+			<h3>First Name</h3><input type="text" name="first_name" placeholder="Last Name">
+			<h3>Description</h3>
+			<textarea id="desc_field" rows="10" cols="50" placeholder="Enter a short description about yourself"></textarea><br>
+			<input id="addUser" type="submit" value="Add User">
+		</form>
+	</div>
+	<div class="right-side">
+			
+	</div>
+</body>
+</html>

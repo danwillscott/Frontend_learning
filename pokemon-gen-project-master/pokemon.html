@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="scripts.js"/></script>
+		<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type="text/javascript">	
+		var poke_link = []			/*jQuery*/
+		  $(document).ready(function(){
+
+		  	$('button').click(function(){
+		  		
+		  		
+			  	for(var i = 1; i <= 151; i += 1){
+			  		poke_link.push("<img src=http://pokeapi.co/media/img/"+[i]+".png"+">"+ i);
+			  	}
+			  	$("body").append(poke_link);
+			  	
+		  	});
+
+		  })
+		</script>
+		<style type="text/css">
+			body{
+				background: #171814;
+			}
+			img{
+				width: 100px;
+				height: 100px;
+				padding: 10px;
+			}
+			button{
+				background: #272822;
+				color: #E6E6E6;
+			}
+		</style>
+	</head>
+	<body>
+    	<button>Ready for some Pokemon?</button>
+	</body>
+</html>

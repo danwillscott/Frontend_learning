@@ -1,0 +1,198 @@
+										/*HEADER SECTION*/
+#header{
+	width: 1000px;
+	height: 100px;
+	background-color: white;
+	/*display: inline-block;*/
+}
+.no-underline{
+	text-decoration: none;
+}
+#global-img{
+	/*display: inline-block;*/
+
+}
+h1{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+h3{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: blue;
+	margin-bottom: -10px;
+}
+p{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 13px;
+}
+a{
+	text-decoration: none;
+}
+#title{
+	display: inline-block;
+	font-size: 50px;
+	margin: 20px 0px 0px 10px;
+	vertical-align: top;
+
+}
+.net{
+	color: blue;
+}
+#header-bar{
+	color: white;
+	margin-top: -30px;
+	height: 30px;
+	padding: 15px;
+	width: 998px;
+	background: #3d75ce; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#3d75ce, #4f82d6, #3d75ce); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#3d75ce, #4f82d6, #3d75ce); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#3d75ce, #4f82d6, #3d75ce); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#3d75ce, #4f82d6, #3d75ce); /* Standard syntax */
+	border: 1px solid black;
+}
+										/*LEFT BAR*/
+#left-content{
+	margin-top: 80px;
+	width: 200px;
+	text-align: center;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	display: inline-block;
+	vertical-align: top;
+}
+.red{
+	color: red;
+}
+h5, h4{
+	text-align: left;
+}
+.link-buttons{
+	display: inline-block;
+	color: white;
+	border-radius: 5px;
+	width: 180px;
+	height: 25px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	text-decoration: none;
+
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+}
+#video-button{
+	background-color: #2d4a7a;
+}
+#more-res{
+	background-color: orange;
+}
+#hr-left{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#ad{
+	height: 300px;
+	width: 200px;
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+}
+#ad-text{
+	margin-top: -285px;
+	padding: 0px 10px 0px 10px;
+	font-size: 20px;
+	color: white;
+	border: 1px solid black;
+}
+#ad-button{
+	background-color: #1d8ec6;
+}
+#ad-ninja{
+	margin-top: -10px;
+}
+#main-content{
+	margin-left: 40px;
+	margin-top: 70px;
+	width: 780px;
+	height: 700px;
+	/*background-color: red;*/
+	display: inline-block;
+}
+#main-header{
+	/*background-color: blue;*/
+	width: 825px;
+	height: 50px;
+	
+	vertical-align: top;
+}
+#dns{
+	vertical-align: top;
+	text-align: center;
+	text-decoration: none;
+	margin-right: 767px;
+}
+#contact{
+	display: inline-block;
+	margin-left: 600px;
+	margin-top: -39px;
+	vertical-align: top;
+	/*background-color: green;*/
+	height: 50px;
+	width: 200px;
+}
+#phone-icon{
+	margin-top: 5px;
+}
+.open-time{
+	margin-left: 10px;
+	font-size: 10px;
+	vertical-align: top;
+	
+}
+#phone{
+	position: relative;
+	left: 22%;
+	top: -70%;
+	color: #639fff;
+	font-size: 20px;
+}
+#inter{
+	font-size: 10px;
+	position: relative;
+	left: 53px;
+	top: -40px;
+}
+#head-hr{
+	color: gray;
+}
+#client-server{
+	position: relative;
+	left: 30%;
+}
+#big-three{
+	border: 5px double #3d75ce;
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+	
+}
+#html-diagram{
+	display: inline-block;
+	margin: 20px 20px 0px 20px;
+}
+#footer{
+	display: inline-block;
+	vertical-align: top;
+	/*background-color: green;*/
+	width: 620px;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="scripts.js"/></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<script type="text/javascript">				/*jQuery*/
+			$(document).ready(function(){
+		    	$('#button1').click(function(){  /*.focus .addClass .show .fadeIn .slideToggle .slideDown*/
+		    		$("#p1").text("Kill switch infomation")
+		    		$("#button2").toggle(function(){
+						  $( "#button2" ).show();
+			});
+
+		    })
+		    	$('#button2').click(function(){ /* .hide .slideUp .fadeOut */
+		    		$("#focus").css("display", "inline").fadeOut( 1000 );
+		    		$("#arm").addClass( "selected" );
+
+		    })
+		    	$('#killoff').click(function(){
+		    			$("#p1").after("<strong> KILLSWITCH IS OFFLINE </strong>")
+
+		    		
+
+		    })
+
+		    	$('#killall').click(function(){
+		    		$("html").hide();	/*.html .hide .click*/
+
+		    		alert("you just hid everything on the page!!!")
+
+		    })
+		    	$('#arm').click(function(){
+		    		$("#killall").show();	/*.html .hide .click*/
+		    		$("#killall").append( "KILL SWITCH" );
+		    		$("#killall").addClass( "selected" );
+		    })
+
+		  })
+		</script>
+		<style type="text/css">
+			#focus{
+				display: none;
+			}
+			.selected {
+   				border: 10px solid red;
+
+   			}
+   			#killall{
+   				display: none;
+   			}
+   			.start_hide{
+   				display: none;
+   			}
+   			#arm{
+   				display: none;
+   			}
+   			#button2{
+   				display: none;
+   			}
+
+		</style>
+	</head>
+	<body>
+		<div>
+			<button id="button1">Activate?</button>
+			<button id="button2">Stage Two?</button>
+			<button class="start_hide" id="killoff">KILLSWITCHOFF</button>
+			<button class="start_hide" id="killall"></button><span id="focus">THIS IS THE KILL SWITCH!</span>
+		</div> 
+		<p id="p1">Info:</p>
+		<p id="p2">Info:</p>
+		<p id="p3">Info:</p>
+		<p id="p4">Info:</p>
+		<button id="arm">Arm killswitch?</button>
+				<!-- .show --> <!-- .fadeIn --> <!-- .slideToggle -->
+				<!-- mod this --> <!-- .val --> <!-- .data --> <!-- .attr --> <!-- .text --> <!-- .after --> <!-- .before -->
+				<!-- .toggle --> <!-- .append -->
+
+	</body>
+</html>
